@@ -10,8 +10,8 @@
 
 var taskInput=document.querySelector(".new-task");//Add a new task.
 var addButton=document.querySelector(".add-task-section__button");//first button
-var incompleteTaskHolder=document.querySelector(".incomplete-tasks");//ul of #incompleteTasks
-var completedTasksHolder=document.querySelector(".completed-tasks");//completed-tasks
+var incompleteTaskHolder=document.querySelector(".incomplete-tasks-list");//ul of #incompleteTasks
+var completedTasksHolder=document.querySelector(".completed-tasks-list");//completed-tasks
 
 
 //New task list item
@@ -52,13 +52,16 @@ var createNewTaskElement=function(taskString){
 
     //and appending.
     listItem.appendChild(checkBox);
+    checkBox.classList.add("checker");
     listItem.appendChild(label);
+    label.classList.add("task-label")
     listItem.appendChild(editInput);
+    editInput.classList.add("task-input");
     listItem.appendChild(editButton);
-    editButton.classList.add("button", "button-edit");
+    editButton.classList.add("button_edit");
     listItem.appendChild(deleteButton);
-    deleteButton.classList.add("button", "button-delete");
-    listItem.classList.add("li");
+    deleteButton.classList.add("button_delete");
+    listItem.classList.add("list-item");
     return listItem;
 }
 
@@ -69,6 +72,7 @@ var addTask=function(){
     //Create a new list item with the text from the #new-task:
     if (!taskInput.value) return;
     var listItem=createNewTaskElement(taskInput.value);
+    
     taskInput.value="";
     //Append listItem to incompleteTaskHolder
     incompleteTaskHolder.appendChild(listItem);
@@ -86,7 +90,7 @@ var editTask=function(){
 
     var editInput=listItem.querySelector('input[type=text]');
     var label=listItem.querySelector("label");
-    var editBtn=listItem.querySelector(".button_edit");
+    var editBtn=listItem.querySelector("button.button_edit");
     var containsClass=listItem.classList.contains("editMode");
     //If class of the parent is .editmode
     if(containsClass){
