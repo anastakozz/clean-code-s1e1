@@ -18,7 +18,7 @@ body {
 }
 
 @media (max-width:768px) {
-  .aaa { 
+  .header { 
     text-align: center;
   }
 }
@@ -27,7 +27,9 @@ body {
   width: 500px;
   margin: 0 auto 0;
 }
-.task-input, .task-label, .new-task {
+.task-input, 
+.task-label, 
+.new-task {
   width: 56%;
   display: inline-block;
   flex-grow: 1;
@@ -35,7 +37,8 @@ body {
 .row-wrapper {
   display: flex;
 }
-.incomplete-tasks-list, .completed-tasks-list {
+.incomplete-tasks-list, 
+.completed-tasks-list {
   margin: 0;
   padding: 0px;
 }
@@ -46,7 +49,10 @@ body {
 .task-input {
   outline: none;
 }
-.button, .button_edit, .button_delete, .add-task-section__button {
+.button, 
+.button_edit, 
+.button_delete, 
+.add-task-section__button {
   outline: none;
   background: none;
   border: 0px;
